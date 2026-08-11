@@ -53,7 +53,7 @@
   .container{
     max-width:var(--maxw);
     margin:0 auto;
-    padding:0 32px;
+    padding:0 64px;
   }
 
   .eyebrow{
@@ -143,7 +143,7 @@
     width:100%;
     max-width:var(--maxw);
     margin:0 auto;
-    padding:0 32px;
+    padding:0 64px;
     display:flex;
     align-items:center;
     justify-content:space-between;
@@ -739,6 +739,10 @@
   .back-top:hover{background:var(--c-orange-500); color:#fff;}
 
   /* ===== RESPONSIVE ===== */
+  @media (max-width:1180px){
+    .container{padding:0 44px;}
+    .nav-inner{padding:0 44px;}
+  }
   @media (max-width:980px){
     .hero-grid{grid-template-columns:1fr; text-align:left;}
     .hero-visual{height:340px; order:-1;}
@@ -765,7 +769,8 @@
     .form-row{grid-template-columns:1fr;}
     .stat-grid{grid-template-columns:1fr 1fr;}
     .product-grid{grid-template-columns:1fr;}
-    .container{padding:0 20px;}
+    .container{padding:0 24px;}
+    .nav-inner{padding:0 24px;}
   }
 </style>
 </head>
@@ -838,8 +843,8 @@
   </div>
   <div class="about-grid">
     <div class="about-copy reveal">
-      <h2 class="section-title">대한민국 건설기계 부품 산업을 대표하는<br>DEVELON 정품 공급사</h2>
-      <p>HD건설기계는 DEVELON(구.HD현대인프라코어) 굴착기 정품부품의 국내 영업 및 유통을 담당하는 공식 건설기계 회사입니다. <strong>엔진, 유압, 언더캐리지, 전기전자, 소모품</strong>에 이르는 전 라인업의 정품부품을 안정적으로 공급하며, 전국 서비스 네트워크를 통해 신속한 부품 조달 체계를 운영하고 있습니다.</p>
+      <h2 class="section-title">대한민국 건설기계 부품 산업을 대표하는<br>DEVELON 정품 공급 파트너</h2>
+      <p>HD건설기계는 DEVELON(HD현대인프라코어) 굴착기 정품부품의 국내 영업 및 유통을 담당하는 공식 파트너사입니다. <strong>엔진, 유압, 언더캐리지, 전기전자, 소모품</strong>에 이르는 전 라인업의 정품부품을 안정적으로 공급하며, 전국 서비스 네트워크를 통해 신속한 부품 조달 체계를 운영하고 있습니다.</p>
       <p>단순 유통을 넘어, <strong>정품 인증 시스템</strong>과 <strong>정밀 공차 관리</strong>를 통해 고객의 장비 가동률과 잔존가치를 지키는 것을 사업의 원칙으로 삼고 있습니다. 가품·재생 부품으로 인한 고장과 안전사고를 원천 차단하고, 굴착기 본연의 성능을 끝까지 유지시키는 것이 저희의 역할입니다.</p>
     </div>
     <div class="stat-grid reveal">
@@ -986,9 +991,9 @@
       <h2 class="section-title">정품부품 견적, 지금 상담하세요</h2>
       <p>장비 모델명과 필요 부품을 알려주시면 담당자가 재고 확인 후 24시간 이내 견적을 안내드립니다.</p>
       <ul class="info-list">
-        <li><span class="tag">TEL</span><span class="val">02-479-0000<small>평일 08:00 – 17:00</small></span></li>
-        <li><span class="tag">E-MAIL</span><span class="val">bh.jang@hd.com<small>견적 및 카탈로그 요청</small></span></li>
-        <li><span class="tag">한국AM영업팀</span><span class="val">경기도 성남시 분당구 분당수서로 477, HD현대 14층<small>건설기계영업본부</small></span></li>
+        <li><span class="tag">TEL</span><span class="val">02-0000-0000<small>평일 09:00 – 18:00</small></span></li>
+        <li><span class="tag">E-MAIL</span><span class="val">parts@hd-construction.example<small>견적 및 카탈로그 요청</small></span></li>
+        <li><span class="tag">지역본부</span><span class="val">서울특별시 강서구 DEVELON 대로 000<small>정품부품 영업본부</small></span></li>
       </ul>
     </div>
 
@@ -1035,7 +1040,7 @@
 <footer>
   <div class="container footer-inner">
     <div class="f-brand">HD건설기계 <span>× DEVELON</span></div>
-    <div>DEVELON은 HD건설기계의의 등록 상표입니다. 본 페이지는 정품부품 공식 판매·홍보 목적으로 제작되었습니다.</div>
+    <div>DEVELON은 HD현대인프라코어의 등록 상표입니다. 본 페이지는 정품부품 공식 판매·홍보 목적으로 제작되었습니다.</div>
     <div>&copy; <span id="year"></span> HD건설기계. All rights reserved.</div>
   </div>
 </footer>
