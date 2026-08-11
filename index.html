@@ -1,8 +1,1146 @@
-<html>
-  <head>
-    <title>나의 첫 웸페이지</title>
-  </head>
-  <body>
-    <h1>나의 첫 웹</h1>
-  </body>
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DEVELON 정품부품 | HD건설기계 공식 파트너</title>
+<meta name="description" content="HD건설기계 - DEVELON 굴착기 정품부품 영업 및 공식 인증 파트너. 정밀 공차, 정품 인증, 전국 서비스 네트워크.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700;800&family=Nanum+Gothic+Coding:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    /* ===== Color tokens ===== */
+    --c-charcoal-900:#17181b;
+    --c-charcoal-800:#1e2024;
+    --c-charcoal-700:#26282e;
+    --c-charcoal-600:#33363d;
+    --c-steel-500:#565a63;
+    --c-steel-300:#8b8f98;
+    --c-orange-600:#e85d04;
+    --c-orange-500:#ff6a13;
+    --c-orange-400:#ff8c3d;
+    --c-orange-100:#ffe4cf;
+    --c-white:#ffffff;
+    --c-offwhite:#f4f4f2;
+    --c-line:rgba(255,255,255,0.08);
+    --c-line-dark:rgba(23,24,27,0.10);
+
+    --font-body:'Nanum Gothic', sans-serif;
+    --font-mono:'Nanum Gothic Coding', monospace;
+
+    --maxw:1200px;
+    --nav-h:76px;
+  }
+
+  *,*::before,*::after{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    font-family:var(--font-body);
+    background:var(--c-offwhite);
+    color:var(--c-charcoal-900);
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  img{max-width:100%;display:block;}
+  a{color:inherit;text-decoration:none;}
+  ul{list-style:none;margin:0;padding:0;}
+  button{font-family:inherit;cursor:pointer;}
+
+  ::selection{background:var(--c-orange-500);color:#fff;}
+
+  .container{
+    max-width:var(--maxw);
+    margin:0 auto;
+    padding:0 32px;
+  }
+
+  .eyebrow{
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    font-family:var(--font-mono);
+    font-size:13px;
+    letter-spacing:0.22em;
+    font-weight:700;
+    color:var(--c-orange-500);
+    text-transform:uppercase;
+    margin-bottom:18px;
+  }
+  .eyebrow::before{
+    content:'';
+    width:26px;
+    height:2px;
+    background:var(--c-orange-500);
+  }
+
+  .section-title{
+    font-weight:800;
+    letter-spacing:-0.02em;
+    line-height:1.25;
+    margin:0 0 16px;
+  }
+  .section-lead{
+    color:var(--c-steel-500);
+    font-size:16px;
+    line-height:1.75;
+    max-width:640px;
+    margin:0 0 48px;
+  }
+
+  .btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:10px;
+    padding:16px 30px;
+    font-family:var(--font-body);
+    font-weight:700;
+    font-size:15px;
+    border-radius:2px;
+    border:1px solid transparent;
+    transition:transform .25s ease, box-shadow .25s ease, background .25s ease, color .25s ease, border-color .25s ease;
+    white-space:nowrap;
+  }
+  .btn-primary{
+    background:var(--c-orange-500);
+    color:#fff;
+    box-shadow:0 8px 24px -8px rgba(255,106,19,0.55);
+  }
+  .btn-primary:hover{background:var(--c-orange-600); transform:translateY(-2px);}
+  .btn-ghost{
+    background:transparent;
+    color:var(--c-white);
+    border-color:rgba(255,255,255,0.35);
+  }
+  .btn-ghost:hover{border-color:var(--c-orange-500); color:var(--c-orange-400);}
+  .btn-dark{
+    background:var(--c-charcoal-900);
+    color:#fff;
+  }
+  .btn-dark:hover{background:var(--c-orange-500);}
+
+  /* ===== NAV ===== */
+  #site-nav{
+    position:fixed;
+    top:0; left:0; right:0;
+    height:var(--nav-h);
+    z-index:900;
+    display:flex;
+    align-items:center;
+    background:rgba(23,24,27,0.0);
+    border-bottom:1px solid transparent;
+    transition:background .35s ease, border-color .35s ease, height .35s ease;
+  }
+  #site-nav.scrolled{
+    background:rgba(23,24,27,0.92);
+    backdrop-filter:blur(10px);
+    border-bottom-color:var(--c-line);
+    height:66px;
+  }
+  .nav-inner{
+    width:100%;
+    max-width:var(--maxw);
+    margin:0 auto;
+    padding:0 32px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+  }
+  .brand{
+    display:flex;
+    align-items:baseline;
+    gap:8px;
+    color:#fff;
+    font-weight:800;
+    font-size:19px;
+    letter-spacing:-0.01em;
+  }
+  .brand small{
+    font-family:var(--font-mono);
+    font-weight:400;
+    font-size:11px;
+    letter-spacing:0.14em;
+    color:var(--c-steel-300);
+  }
+  .brand .brand-mark{color:var(--c-orange-500);}
+
+  .nav-links{
+    display:flex;
+    gap:6px;
+    align-items:center;
+  }
+  .nav-links a{
+    position:relative;
+    padding:10px 14px;
+    font-size:14.5px;
+    font-weight:700;
+    color:rgba(255,255,255,0.72);
+    transition:color .2s ease;
+  }
+  .nav-links a::after{
+    content:'';
+    position:absolute;
+    left:14px; right:14px; bottom:4px;
+    height:2px;
+    background:var(--c-orange-500);
+    transform:scaleX(0);
+    transform-origin:left;
+    transition:transform .25s ease;
+  }
+  .nav-links a:hover{color:#fff;}
+  .nav-links a.active{color:#fff;}
+  .nav-links a.active::after{transform:scaleX(1);}
+
+  .nav-cta{
+    display:flex;
+    align-items:center;
+    gap:14px;
+  }
+  .nav-toggle{
+    display:none;
+    background:none;
+    border:1px solid rgba(255,255,255,0.3);
+    width:42px;height:42px;
+    border-radius:2px;
+    align-items:center;
+    justify-content:center;
+  }
+  .nav-toggle span, .nav-toggle span::before, .nav-toggle span::after{
+    content:'';
+    display:block;
+    width:18px;height:2px;
+    background:#fff;
+    position:relative;
+    transition:all .25s ease;
+  }
+  .nav-toggle span::before{position:absolute; top:-6px;}
+  .nav-toggle span::after{position:absolute; top:6px;}
+
+  /* ===== HERO ===== */
+  #hero{
+    position:relative;
+    min-height:100vh;
+    background:
+      radial-gradient(ellipse at 78% 18%, rgba(255,106,19,0.16), transparent 55%),
+      linear-gradient(180deg, var(--c-charcoal-900) 0%, var(--c-charcoal-800) 100%);
+    color:#fff;
+    display:flex;
+    align-items:center;
+    overflow:hidden;
+  }
+  .blueprint-grid{
+    position:absolute; inset:0;
+    background-image:
+      linear-gradient(rgba(255,255,255,0.045) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.045) 1px, transparent 1px);
+    background-size:44px 44px;
+    mask-image:linear-gradient(180deg, rgba(0,0,0,0.9), transparent 85%);
+    pointer-events:none;
+  }
+  .hero-grid{
+    position:relative;
+    z-index:2;
+    width:100%;
+    display:grid;
+    grid-template-columns:1.05fr 0.95fr;
+    gap:40px;
+    align-items:center;
+    padding-top:var(--nav-h);
+  }
+  .hero-copy h1{
+    font-size:clamp(34px, 4.6vw, 60px);
+    font-weight:800;
+    line-height:1.2;
+    letter-spacing:-0.025em;
+    margin:0 0 22px;
+  }
+  .hero-copy h1 .hi-line{display:block; opacity:0; transform:translateY(28px); animation:riseIn .8s ease forwards;}
+  .hero-copy h1 .hi-line:nth-child(1){animation-delay:.15s;}
+  .hero-copy h1 .hi-line:nth-child(2){animation-delay:.32s;}
+  .hero-copy h1 .accent{color:var(--c-orange-500);}
+  @keyframes riseIn{to{opacity:1; transform:translateY(0);}}
+
+  .hero-copy p{
+    font-size:17px;
+    line-height:1.85;
+    color:rgba(255,255,255,0.68);
+    max-width:520px;
+    margin:0 0 36px;
+    opacity:0; animation:riseIn .8s ease forwards; animation-delay:.5s;
+  }
+  .hero-actions{display:flex; gap:14px; flex-wrap:wrap; opacity:0; animation:riseIn .8s ease forwards; animation-delay:.68s;}
+
+  .hero-stats{
+    display:flex;
+    gap:36px;
+    margin-top:56px;
+    padding-top:28px;
+    border-top:1px solid var(--c-line);
+    opacity:0; animation:riseIn .8s ease forwards; animation-delay:.85s;
+  }
+  .hero-stats .stat b{
+    display:block;
+    font-family:var(--font-mono);
+    font-size:26px;
+    font-weight:700;
+    color:#fff;
+    font-variant-numeric:tabular-nums;
+  }
+  .hero-stats .stat span{
+    font-size:12.5px;
+    color:var(--c-steel-300);
+    letter-spacing:0.02em;
+  }
+
+  /* hero mechanical diagram */
+  .hero-visual{
+    position:relative;
+    height:520px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+  }
+  .hero-visual svg{width:100%; height:100%; overflow:visible;}
+  .draw-path{
+    fill:none;
+    stroke:var(--c-orange-500);
+    stroke-width:2;
+    stroke-linecap:round;
+    stroke-linejoin:round;
+    stroke-dasharray:2400;
+    stroke-dashoffset:2400;
+    animation:drawLine 3.2s cubic-bezier(.65,0,.35,1) forwards .3s;
+  }
+  .draw-path.dim{stroke:rgba(255,255,255,0.28); stroke-width:1.2; animation-duration:3.6s;}
+  @keyframes drawLine{to{stroke-dashoffset:0;}}
+  .diagram-node{
+    fill:var(--c-charcoal-800);
+    stroke:var(--c-orange-500);
+    stroke-width:1.4;
+    opacity:0;
+    animation:nodeIn .5s ease forwards;
+  }
+  @keyframes nodeIn{to{opacity:1;}}
+  .diagram-label{
+    font-family:var(--font-mono);
+    font-size:10.5px;
+    fill:var(--c-steel-300);
+    letter-spacing:0.06em;
+  }
+
+  .scroll-cue{
+    position:absolute;
+    left:50%; bottom:34px;
+    transform:translateX(-50%);
+    display:flex; flex-direction:column; align-items:center; gap:8px;
+    color:var(--c-steel-300);
+    font-family:var(--font-mono);
+    font-size:11px;
+    letter-spacing:0.18em;
+    z-index:3;
+  }
+  .scroll-cue .bar{
+    width:1px; height:34px;
+    background:linear-gradient(180deg, var(--c-orange-500), transparent);
+    animation:cueMove 1.8s ease-in-out infinite;
+  }
+  @keyframes cueMove{0%,100%{transform:translateY(0); opacity:1;}50%{transform:translateY(10px); opacity:.4;}}
+
+  /* ===== reveal on scroll ===== */
+  .reveal{opacity:0; transform:translateY(36px); transition:opacity .8s ease, transform .8s ease;}
+  .reveal.in-view{opacity:1; transform:translateY(0);}
+  .reveal-stagger.in-view > *{transition-delay:calc(var(--i) * 90ms);}
+
+  /* ===== ABOUT ===== */
+  #about{
+    background:var(--c-white);
+    padding:130px 0 110px;
+  }
+  .about-grid{
+    display:grid;
+    grid-template-columns:0.9fr 1.1fr;
+    gap:72px;
+    align-items:start;
+  }
+  .about-grid h2{font-size:clamp(28px,3.2vw,40px); color:var(--c-charcoal-900);}
+  .about-copy p{
+    font-size:15.5px;
+    line-height:1.9;
+    color:var(--c-steel-500);
+    margin:0 0 18px;
+  }
+  .about-copy strong{color:var(--c-charcoal-900);}
+
+  .stat-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:1px;
+    background:var(--c-line-dark);
+    border:1px solid var(--c-line-dark);
+  }
+  .stat-cell{
+    background:var(--c-white);
+    padding:34px 28px;
+  }
+  .stat-cell b{
+    display:block;
+    font-family:var(--font-mono);
+    font-size:38px;
+    font-weight:700;
+    color:var(--c-charcoal-900);
+    letter-spacing:-0.02em;
+    font-variant-numeric:tabular-nums;
+  }
+  .stat-cell b .unit{font-size:20px; color:var(--c-orange-500); margin-left:2px;}
+  .stat-cell span{
+    display:block;
+    margin-top:8px;
+    font-size:13.5px;
+    color:var(--c-steel-500);
+  }
+
+  /* ===== WHY GENUINE ===== */
+  #why{
+    background:var(--c-charcoal-900);
+    color:#fff;
+    padding:130px 0;
+    position:relative;
+  }
+  #why .section-lead{color:var(--c-steel-300);}
+  .why-layout{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:60px;
+    align-items:center;
+  }
+  .compare-table{
+    border:1px solid var(--c-line);
+  }
+  .compare-row{
+    display:grid;
+    grid-template-columns:1.2fr 1fr 1fr;
+    border-bottom:1px solid var(--c-line);
+  }
+  .compare-row:last-child{border-bottom:none;}
+  .compare-row > div{
+    padding:18px 20px;
+    font-size:13.5px;
+  }
+  .compare-row.head{
+    background:rgba(255,255,255,0.03);
+    font-weight:700;
+    font-size:12px;
+    letter-spacing:0.08em;
+    font-family:var(--font-mono);
+    text-transform:uppercase;
+  }
+  .compare-row.head .col-genuine{color:var(--c-orange-500);}
+  .compare-row.head .col-fake{color:var(--c-steel-300);}
+  .compare-row .col-label{color:rgba(255,255,255,0.85); font-weight:700;}
+  .compare-row .col-genuine{color:#fff; display:flex; align-items:center; gap:8px;}
+  .compare-row .col-genuine::before{content:'✓'; color:var(--c-orange-500); font-weight:700;}
+  .compare-row .col-fake{color:var(--c-steel-300); display:flex; align-items:center; gap:8px;}
+  .compare-row .col-fake::before{content:'×'; color:#7a4a3a;}
+
+  .authentic-badge{
+    position:relative;
+    width:100%;
+    aspect-ratio:1/1;
+    max-width:340px;
+    margin:0 auto;
+    border:1px dashed rgba(255,255,255,0.25);
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+  }
+  .authentic-badge-inner{
+    width:78%; height:78%;
+    border-radius:50%;
+    background:radial-gradient(circle at 35% 30%, var(--c-orange-400), var(--c-orange-600) 70%);
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    color:#1c1200;
+    box-shadow:0 20px 60px -20px rgba(255,106,19,0.6), inset 0 0 0 6px rgba(255,255,255,0.18);
+    animation:badgeSpin 22s linear infinite;
+  }
+  @keyframes badgeSpin{to{transform:rotate(360deg);}}
+  .authentic-badge-inner span.big{
+    font-family:var(--font-mono);
+    font-weight:700;
+    font-size:15px;
+    letter-spacing:0.1em;
+    animation:counterSpin 22s linear infinite;
+  }
+  @keyframes counterSpin{to{transform:rotate(-360deg);}}
+  .authentic-badge-inner .qr{
+    width:56px; height:56px;
+    margin-bottom:10px;
+    background:
+      repeating-linear-gradient(90deg,#1c1200 0 4px, transparent 4px 8px),
+      repeating-linear-gradient(0deg,#1c1200 0 4px, transparent 4px 8px);
+    background-blend-mode:multiply;
+    opacity:.85;
+    animation:counterSpin 22s linear infinite;
+  }
+
+  /* ===== PRODUCTS ===== */
+  #products{
+    background:var(--c-offwhite);
+    padding:130px 0;
+  }
+  .product-grid{
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+    gap:1px;
+    background:var(--c-line-dark);
+    border:1px solid var(--c-line-dark);
+  }
+  .product-card{
+    background:var(--c-white);
+    padding:38px 30px;
+    position:relative;
+    overflow:hidden;
+    transition:background .3s ease;
+  }
+  .product-card::before{
+    content:attr(data-code);
+    position:absolute;
+    top:18px; right:22px;
+    font-family:var(--font-mono);
+    font-size:11px;
+    color:var(--c-steel-300);
+    letter-spacing:0.06em;
+  }
+  .product-card:hover{background:var(--c-charcoal-900);}
+  .product-card:hover .p-icon{border-color:var(--c-orange-500); background:rgba(255,106,19,0.12);}
+  .product-card:hover h3, .product-card:hover p{color:#fff;}
+  .product-card:hover p{color:rgba(255,255,255,0.6);}
+  .product-card:hover::before{color:var(--c-orange-400);}
+  .p-icon{
+    width:52px; height:52px;
+    border:1px solid var(--c-line-dark);
+    border-radius:2px;
+    display:flex; align-items:center; justify-content:center;
+    margin-bottom:22px;
+    transition:border-color .3s ease, background .3s ease;
+  }
+  .p-icon svg{width:26px; height:26px; stroke:var(--c-orange-500); fill:none; stroke-width:1.6;}
+  .product-card h3{
+    font-size:18px; font-weight:800; margin:0 0 10px; color:var(--c-charcoal-900);
+    transition:color .3s ease;
+  }
+  .product-card p{
+    font-size:13.5px; line-height:1.75; color:var(--c-steel-500); margin:0;
+    transition:color .3s ease;
+  }
+
+  /* ===== QUALITY / PROCESS ===== */
+  #quality{
+    background:var(--c-white);
+    padding:130px 0;
+  }
+  .process-rail{
+    display:grid;
+    grid-template-columns:repeat(5,1fr);
+    gap:0;
+    position:relative;
+    margin-top:20px;
+  }
+  .process-rail::before{
+    content:'';
+    position:absolute;
+    top:23px; left:6%; right:6%;
+    height:1px;
+    background:var(--c-line-dark);
+  }
+  .process-step{
+    position:relative;
+    padding-top:64px;
+    text-align:center;
+    padding-left:14px; padding-right:14px;
+  }
+  .process-step .dot{
+    position:absolute;
+    top:14px; left:50%;
+    transform:translateX(-50%);
+    width:18px; height:18px;
+    border-radius:50%;
+    background:var(--c-white);
+    border:2px solid var(--c-orange-500);
+  }
+  .process-step .dot::after{
+    content:'';
+    position:absolute; inset:4px;
+    border-radius:50%;
+    background:var(--c-orange-500);
+    transform:scale(0);
+    transition:transform .4s ease;
+  }
+  .process-step.in-view .dot::after{transform:scale(1);}
+  .process-step .idx{
+    font-family:var(--font-mono);
+    font-size:11px;
+    color:var(--c-orange-500);
+    letter-spacing:0.1em;
+    margin-bottom:8px;
+    display:block;
+  }
+  .process-step h4{font-size:15px; font-weight:800; margin:0 0 8px; color:var(--c-charcoal-900);}
+  .process-step p{font-size:12.5px; color:var(--c-steel-500); line-height:1.6; margin:0;}
+
+  .cert-strip{
+    margin-top:90px;
+    display:flex;
+    justify-content:space-between;
+    flex-wrap:wrap;
+    gap:24px;
+    padding:34px 40px;
+    background:var(--c-charcoal-900);
+    color:#fff;
+  }
+  .cert-item{
+    display:flex; align-items:center; gap:14px;
+    font-size:14px;
+    color:rgba(255,255,255,0.82);
+  }
+  .cert-item b{
+    font-family:var(--font-mono);
+    color:var(--c-orange-500);
+    font-size:13px;
+    border:1px solid rgba(255,106,19,0.5);
+    padding:4px 10px;
+  }
+
+  /* ===== NETWORK ===== */
+  #network{
+    background:var(--c-offwhite);
+    padding:130px 0;
+  }
+  .network-grid{
+    display:grid;
+    grid-template-columns:repeat(5,1fr);
+    gap:1px;
+    background:var(--c-line-dark);
+    border:1px solid var(--c-line-dark);
+  }
+  .region-cell{
+    background:var(--c-white);
+    padding:30px 22px;
+    text-align:left;
+    transition:background .3s ease, transform .3s ease;
+  }
+  .region-cell:hover{background:var(--c-charcoal-900); transform:translateY(-4px);}
+  .region-cell:hover *{color:#fff;}
+  .region-cell b{
+    display:block;
+    font-family:var(--font-mono);
+    font-size:30px;
+    font-weight:700;
+    color:var(--c-orange-500);
+    margin-bottom:10px;
+  }
+  .region-cell h4{margin:0 0 6px; font-size:15px; font-weight:800; color:var(--c-charcoal-900);}
+  .region-cell span{font-size:12.5px; color:var(--c-steel-500);}
+
+  /* ===== CONTACT ===== */
+  #contact{
+    background:var(--c-charcoal-900);
+    color:#fff;
+    padding:130px 0;
+  }
+  .contact-grid{
+    display:grid;
+    grid-template-columns:1fr 1.05fr;
+    gap:70px;
+  }
+  .contact-info h2{font-size:clamp(28px,3.2vw,40px);}
+  .contact-info p{color:var(--c-steel-300); font-size:15px; line-height:1.85; max-width:440px;}
+  .info-list{margin-top:38px; display:flex; flex-direction:column; gap:22px;}
+  .info-list li{display:flex; gap:16px; align-items:flex-start; font-size:14.5px;}
+  .info-list .tag{
+    font-family:var(--font-mono);
+    font-size:11px;
+    color:var(--c-orange-500);
+    border:1px solid rgba(255,106,19,0.45);
+    padding:4px 8px;
+    white-space:nowrap;
+    margin-top:1px;
+  }
+  .info-list .val{color:rgba(255,255,255,0.85); line-height:1.6;}
+  .info-list .val small{display:block; color:var(--c-steel-300); font-size:12px; margin-top:2px;}
+
+  form.inquiry{
+    background:var(--c-charcoal-800);
+    border:1px solid var(--c-line);
+    padding:36px;
+  }
+  .form-row{display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-bottom:16px;}
+  .field{display:flex; flex-direction:column; gap:8px;}
+  .field.full{grid-column:1/-1;}
+  .field label{font-size:12.5px; color:var(--c-steel-300); letter-spacing:0.02em;}
+  .field input, .field select, .field textarea{
+    background:var(--c-charcoal-700);
+    border:1px solid var(--c-line);
+    color:#fff;
+    padding:12px 14px;
+    font-family:var(--font-body);
+    font-size:14px;
+    border-radius:2px;
+    outline:none;
+    transition:border-color .2s ease, background .2s ease;
+  }
+  .field input:focus, .field select:focus, .field textarea:focus{border-color:var(--c-orange-500); background:var(--c-charcoal-600);}
+  .field textarea{resize:vertical; min-height:96px;}
+  form.inquiry .btn{width:100%; margin-top:6px;}
+  .form-note{font-size:12px; color:var(--c-steel-300); margin-top:14px; line-height:1.6;}
+  .form-success{
+    display:none;
+    margin-top:16px;
+    padding:14px 16px;
+    border:1px solid rgba(255,106,19,0.5);
+    background:rgba(255,106,19,0.08);
+    color:var(--c-orange-400);
+    font-size:13.5px;
+  }
+  .form-success.show{display:block;}
+
+  /* ===== FOOTER ===== */
+  footer{
+    background:var(--c-charcoal-900);
+    color:var(--c-steel-300);
+    border-top:1px solid var(--c-line);
+    padding:44px 0;
+  }
+  .footer-inner{
+    display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:16px;
+    font-size:12.5px;
+  }
+  .footer-inner .f-brand{color:#fff; font-weight:800; font-size:15px;}
+  .footer-inner .f-brand span{color:var(--c-orange-500);}
+  .back-top{
+    position:fixed; right:26px; bottom:26px;
+    width:46px; height:46px;
+    background:var(--c-charcoal-900);
+    border:1px solid var(--c-orange-500);
+    color:var(--c-orange-500);
+    display:flex; align-items:center; justify-content:center;
+    opacity:0; visibility:hidden;
+    transform:translateY(10px);
+    transition:all .3s ease;
+    z-index:500;
+  }
+  .back-top.show{opacity:1; visibility:visible; transform:translateY(0);}
+  .back-top:hover{background:var(--c-orange-500); color:#fff;}
+
+  /* ===== RESPONSIVE ===== */
+  @media (max-width:980px){
+    .hero-grid{grid-template-columns:1fr; text-align:left;}
+    .hero-visual{height:340px; order:-1;}
+    .about-grid, .why-layout, .contact-grid{grid-template-columns:1fr; gap:44px;}
+    .product-grid{grid-template-columns:repeat(2,1fr);}
+    .network-grid{grid-template-columns:repeat(2,1fr);}
+    .process-rail{grid-template-columns:repeat(5,1fr);}
+    .cert-strip{flex-direction:column;}
+  }
+  @media (max-width:760px){
+    .nav-links, .nav-cta .btn-ghost{display:none;}
+    .nav-toggle{display:flex;}
+    #site-nav.menu-open .nav-links{
+      display:flex; position:fixed; top:66px; left:0; right:0; bottom:0;
+      background:var(--c-charcoal-900);
+      flex-direction:column; padding:26px 32px; gap:2px;
+    }
+    #site-nav.menu-open .nav-links a{padding:16px 4px; border-bottom:1px solid var(--c-line); font-size:16px;}
+    .hero-stats{flex-wrap:wrap; gap:24px 36px;}
+    .process-rail{grid-template-columns:1fr; gap:34px;}
+    .process-rail::before{display:none;}
+    .process-step{padding-top:44px;}
+    .compare-row > div{padding:14px;}
+    .form-row{grid-template-columns:1fr;}
+    .stat-grid{grid-template-columns:1fr 1fr;}
+    .product-grid{grid-template-columns:1fr;}
+    .container{padding:0 20px;}
+  }
+</style>
+</head>
+<body>
+
+<nav id="site-nav">
+  <div class="nav-inner">
+    <a href="#hero" class="brand">DEVELON<small>&nbsp;GENUINE PARTS · HD건설기계</small></a>
+    <ul class="nav-links">
+      <li><a href="#about" data-nav>회사소개</a></li>
+      <li><a href="#why" data-nav>정품인증</a></li>
+      <li><a href="#products" data-nav>부품카테고리</a></li>
+      <li><a href="#quality" data-nav>품질보증</a></li>
+      <li><a href="#network" data-nav>서비스망</a></li>
+      <li><a href="#contact" data-nav>문의하기</a></li>
+    </ul>
+    <div class="nav-cta">
+      <a href="#contact" class="btn btn-ghost">견적 문의</a>
+      <button class="nav-toggle" id="navToggle" aria-label="메뉴 열기"><span></span></button>
+    </div>
+  </div>
+</nav>
+
+<!-- ===================== HERO ===================== -->
+<section id="hero">
+  <div class="blueprint-grid"></div>
+  <div class="container hero-grid">
+    <div class="hero-copy">
+      <div class="eyebrow">DEVELON OFFICIAL GENUINE PARTS PARTNER</div>
+      <h1>
+        <span class="hi-line">정품이 곧, <span class="accent">안전과 성능</span>입니다.</span>
+        <span class="hi-line">굴착기의 수명, 부품에서 시작됩니다.</span>
+      </h1>
+      <p>HD건설기계는 DEVELON 굴착기 정품부품의 공급과 유통을 책임지는 공식 파트너입니다. 원자재 검수부터 정밀 가공, 전수 검사까지 — 순정 공차 그대로의 부품만을 현장에 전달합니다.</p>
+      <div class="hero-actions">
+        <a href="#products" class="btn btn-primary">부품 카테고리 보기</a>
+        <a href="#contact" class="btn btn-ghost">담당자 상담 요청</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat"><b data-count="100">0</b><span>정품 순정 소재 비율(%)</span></div>
+        <div class="stat"><b data-count="18" data-suffix="개">0</b><span>전국 서비스 거점</span></div>
+        <div class="stat"><b data-count="12" data-suffix="년+">0</b><span>정품 부품 공급 이력</span></div>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <svg viewBox="0 0 460 480">
+        <!-- excavator arm schematic -->
+        <path class="draw-path dim" d="M60 420 L60 60 M60 60 L420 60 M420 60 L420 420" />
+        <path class="draw-path" d="M70 400 L150 300 L230 330 L300 200 L360 150" />
+        <circle class="diagram-node" cx="70" cy="400" r="8" style="animation-delay:.9s"/>
+        <circle class="diagram-node" cx="150" cy="300" r="8" style="animation-delay:1.3s"/>
+        <circle class="diagram-node" cx="230" cy="330" r="8" style="animation-delay:1.7s"/>
+        <circle class="diagram-node" cx="300" cy="200" r="8" style="animation-delay:2.1s"/>
+        <circle class="diagram-node" cx="360" cy="150" r="10" style="animation-delay:2.5s"/>
+        <path class="draw-path dim" d="M150 300 C 170 260, 210 260, 230 330" />
+        <path class="draw-path dim" d="M300 200 C 320 170, 340 170, 360 150" />
+        <text class="diagram-label" x="20" y="440">BOOM CYLINDER · SPEC 0472-A</text>
+        <text class="diagram-label" x="150" y="290" text-anchor="middle" dy="-14">PIN JOINT</text>
+        <text class="diagram-label" x="360" y="140" text-anchor="middle" dy="-14">BUCKET LINK</text>
+      </svg>
+    </div>
+  </div>
+  <div class="scroll-cue"><span>SCROLL</span><span class="bar"></span></div>
+</section>
+
+<!-- ===================== ABOUT ===================== -->
+<section id="about" class="container">
+  <div class="reveal">
+    <div class="eyebrow">회사소개</div>
+  </div>
+  <div class="about-grid">
+    <div class="about-copy reveal">
+      <h2 class="section-title">대한민국 건설기계 부품 산업을 대표하는<br>DEVELON 정품 공급 파트너</h2>
+      <p>HD건설기계는 DEVELON(HD현대인프라코어) 굴착기 정품부품의 국내 영업 및 유통을 담당하는 공식 파트너사입니다. <strong>엔진, 유압, 언더캐리지, 전기전자, 소모품</strong>에 이르는 전 라인업의 정품부품을 안정적으로 공급하며, 전국 서비스 네트워크를 통해 신속한 부품 조달 체계를 운영하고 있습니다.</p>
+      <p>단순 유통을 넘어, <strong>정품 인증 시스템</strong>과 <strong>정밀 공차 관리</strong>를 통해 고객의 장비 가동률과 잔존가치를 지키는 것을 사업의 원칙으로 삼고 있습니다. 가품·재생 부품으로 인한 고장과 안전사고를 원천 차단하고, 굴착기 본연의 성능을 끝까지 유지시키는 것이 저희의 역할입니다.</p>
+    </div>
+    <div class="stat-grid reveal">
+      <div class="stat-cell"><b>45,000<span class="unit">+</span></b><span>정품부품 SKU 보유</span></div>
+      <div class="stat-cell"><b>98.6<span class="unit">%</span></b><span>부품 검수 합격률</span></div>
+      <div class="stat-cell"><b>24<span class="unit">h</span></b><span>긴급부품 대응 체계</span></div>
+      <div class="stat-cell"><b>3,200<span class="unit">+</span></b><span>거래 고객사</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== WHY GENUINE ===================== -->
+<section id="why">
+  <div class="container">
+    <div class="eyebrow reveal">정품인증</div>
+    <h2 class="section-title reveal" style="max-width:640px;">가품 한 개가, 장비 전체의 수명을 갉아먹습니다</h2>
+    <p class="section-lead reveal">정품과 비정품의 차이는 눈에 보이지 않습니다. 그러나 그 차이는 압력, 마모, 발열이 반복되는 현장에서 반드시 드러납니다.</p>
+    <div class="why-layout">
+      <div class="compare-table reveal">
+        <div class="compare-row head">
+          <div>비교 항목</div>
+          <div class="col-genuine">DEVELON 정품</div>
+          <div class="col-fake">비정품·재생품</div>
+        </div>
+        <div class="compare-row">
+          <div class="col-label">정밀 공차</div>
+          <div class="col-genuine">설계 공차 100% 준수</div>
+          <div class="col-fake">공차 오차 발생</div>
+        </div>
+        <div class="compare-row">
+          <div class="col-label">소재 및 열처리</div>
+          <div class="col-genuine">순정 소재·규격 열처리</div>
+          <div class="col-fake">소재 불명확</div>
+        </div>
+        <div class="compare-row">
+          <div class="col-label">품질 보증</div>
+          <div class="col-genuine">정품 보증서 발급</div>
+          <div class="col-fake">보증 불가</div>
+        </div>
+        <div class="compare-row">
+          <div class="col-label">장비 잔존가치</div>
+          <div class="col-genuine">정품 이력 유지</div>
+          <div class="col-fake">중고가 하락 요인</div>
+        </div>
+        <div class="compare-row">
+          <div class="col-label">A/S 연계</div>
+          <div class="col-genuine">공식 서비스망 연동</div>
+          <div class="col-fake">A/S 연계 불가</div>
+        </div>
+      </div>
+      <div class="reveal">
+        <div class="authentic-badge">
+          <div class="authentic-badge-inner">
+            <div class="qr"></div>
+            <span class="big">GENUINE<br>CERTIFIED</span>
+          </div>
+        </div>
+        <p style="text-align:center; color:var(--c-steel-300); font-size:12.5px; margin-top:22px; font-family:var(--font-mono); letter-spacing:.04em;">모든 정품부품에는 고유 인증 스티커가 부착됩니다</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== PRODUCTS ===================== -->
+<section id="products" class="container">
+  <div class="eyebrow reveal">부품 카테고리</div>
+  <h2 class="section-title reveal">굴착기 전 라인업, 정품 부품으로</h2>
+  <p class="section-lead reveal">엔진부터 소모품까지 — DEVELON 굴착기의 모든 계통에 대응하는 정품부품을 카테고리별로 공급합니다.</p>
+  <div class="product-grid reveal-stagger">
+    <div class="product-card" data-code="ENG-01" style="--i:0">
+      <div class="p-icon"><svg viewBox="0 0 24 24"><rect x="4" y="7" width="16" height="12" rx="1"/><path d="M8 7V4h8v3M9 12h6M9 15h4"/></svg></div>
+      <h3>엔진부품</h3>
+      <p>실린더 헤드, 인젝터, 터보차저 등 엔진 계통 전 부품을 순정 규격으로 공급합니다.</p>
+    </div>
+    <div class="product-card" data-code="HYD-02" style="--i:1">
+      <div class="p-icon"><svg viewBox="0 0 24 24"><path d="M12 3v6m0 0l-4 4m4-4l4 4M8 13v5a4 4 0 008 0v-5"/></svg></div>
+      <h3>유압부품</h3>
+      <p>유압펌프, 실린더, 밸브 등 정밀 공차가 요구되는 유압 시스템 부품 라인업입니다.</p>
+    </div>
+    <div class="product-card" data-code="UDC-03" style="--i:2">
+      <div class="p-icon"><svg viewBox="0 0 24 24"><circle cx="7" cy="17" r="3"/><circle cx="17" cy="17" r="3"/><path d="M4 17h1m14 0h1M7 14V8h10v6"/></svg></div>
+      <h3>언더캐리지</h3>
+      <p>트랙, 스프로킷, 롤러 등 주행 계통 부품으로 접지력과 내마모성을 보장합니다.</p>
+    </div>
+    <div class="product-card" data-code="ELE-04" style="--i:3">
+      <div class="p-icon"><svg viewBox="0 0 24 24"><path d="M13 2L4 14h6l-1 8 9-12h-6l1-8z"/></svg></div>
+      <h3>전기·전자부품</h3>
+      <p>ECU, 센서, 배선 하네스 등 장비 제어의 핵심이 되는 전자 부품군입니다.</p>
+    </div>
+    <div class="product-card" data-code="CON-05" style="--i:4">
+      <div class="p-icon"><svg viewBox="0 0 24 24"><path d="M12 2l2.5 7.5H22l-6 4.5 2.5 7.5L12 17l-6.5 4.5L8 14 2 9.5h7.5z"/></svg></div>
+      <h3>소모품</h3>
+      <p>필터, 오일, 벨트 등 정기 교체가 필요한 소모성 부품을 정기 공급합니다.</p>
+    </div>
+    <div class="product-card" data-code="ATT-06" style="--i:5">
+      <div class="p-icon"><svg viewBox="0 0 24 24"><path d="M3 12h6l3-8 3 16 3-8h3"/></svg></div>
+      <h3>어태치먼트</h3>
+      <p>버킷, 브레이커 연결부 등 작업 장치 관련 정품 부품을 함께 지원합니다.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== QUALITY ===================== -->
+<section id="quality" class="container">
+  <div class="eyebrow reveal">품질보증</div>
+  <h2 class="section-title reveal">출고 전, 다섯 단계의 정품 검증</h2>
+  <p class="section-lead reveal">모든 DEVELON 정품부품은 원자재 단계부터 출고까지 표준화된 품질 관리 공정을 거칩니다.</p>
+
+  <div class="process-rail">
+    <div class="process-step reveal"><span class="dot"></span><span class="idx">STEP 1</span><h4>원자재 검수</h4><p>소재 성분 및 규격 적합성 확인</p></div>
+    <div class="process-step reveal"><span class="dot"></span><span class="idx">STEP 2</span><h4>정밀 가공</h4><p>설계 공차 기준 정밀 절삭·성형</p></div>
+    <div class="process-step reveal"><span class="dot"></span><span class="idx">STEP 3</span><h4>열처리·표면처리</h4><p>내마모성 확보를 위한 규격 처리</p></div>
+    <div class="process-step reveal"><span class="dot"></span><span class="idx">STEP 4</span><h4>전수 품질검사</h4><p>치수·강도·내구성 전수 검사</p></div>
+    <div class="process-step reveal"><span class="dot"></span><span class="idx">STEP 5</span><h4>정품 인증·출고</h4><p>고유 인증 스티커 부착 후 출고</p></div>
+  </div>
+
+  <div class="cert-strip reveal">
+    <div class="cert-item"><b>ISO 9001</b>품질경영시스템 인증</div>
+    <div class="cert-item"><b>KS 인증</b>국가 표준 부합 부품</div>
+    <div class="cert-item"><b>정품 보증서</b>부품별 개별 발급</div>
+    <div class="cert-item"><b>이력 추적</b>생산·유통 전 이력 관리</div>
+  </div>
+</section>
+
+<!-- ===================== NETWORK ===================== -->
+<section id="network" class="container">
+  <div class="eyebrow reveal">서비스 네트워크</div>
+  <h2 class="section-title reveal">전국 어디서나, 빠른 정품부품 조달</h2>
+  <p class="section-lead reveal">권역별 서비스 거점을 통해 부품 주문부터 현장 인도까지의 시간을 최소화합니다.</p>
+  <div class="network-grid reveal-stagger">
+    <div class="region-cell" style="--i:0"><b>05</b><h4>수도권</h4><span>서울·경기·인천</span></div>
+    <div class="region-cell" style="--i:1"><b>04</b><h4>충청권</h4><span>대전·세종·충남북</span></div>
+    <div class="region-cell" style="--i:2"><b>04</b><h4>영남권</h4><span>부산·대구·경남북</span></div>
+    <div class="region-cell" style="--i:3"><b>03</b><h4>호남권</h4><span>광주·전남북</span></div>
+    <div class="region-cell" style="--i:4"><b>02</b><h4>강원·제주</h4><span>강원·제주 특별거점</span></div>
+  </div>
+</section>
+
+<!-- ===================== CONTACT ===================== -->
+<section id="contact">
+  <div class="container contact-grid">
+    <div class="contact-info reveal">
+      <div class="eyebrow">문의하기</div>
+      <h2 class="section-title">정품부품 견적, 지금 상담하세요</h2>
+      <p>장비 모델명과 필요 부품을 알려주시면 담당자가 재고 확인 후 24시간 이내 견적을 안내드립니다.</p>
+      <ul class="info-list">
+        <li><span class="tag">TEL</span><span class="val">02-0000-0000<small>평일 09:00 – 18:00</small></span></li>
+        <li><span class="tag">E-MAIL</span><span class="val">parts@hd-construction.example<small>견적 및 카탈로그 요청</small></span></li>
+        <li><span class="tag">지역본부</span><span class="val">서울특별시 강서구 DEVELON 대로 000<small>정품부품 영업본부</small></span></li>
+      </ul>
+    </div>
+
+    <form class="inquiry reveal" id="inquiryForm">
+      <div class="form-row">
+        <div class="field">
+          <label for="f-name">담당자명</label>
+          <input id="f-name" type="text" placeholder="홍길동" required>
+        </div>
+        <div class="field">
+          <label for="f-company">회사명</label>
+          <input id="f-company" type="text" placeholder="㈜현장건설" required>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="field">
+          <label for="f-phone">연락처</label>
+          <input id="f-phone" type="tel" placeholder="010-0000-0000" required>
+        </div>
+        <div class="field">
+          <label for="f-model">굴착기 모델</label>
+          <select id="f-model">
+            <option>DX140LC</option>
+            <option>DX225LC</option>
+            <option>DX300LC</option>
+            <option>DX380LC</option>
+            <option>기타 / 미정</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="field full">
+          <label for="f-msg">문의 내용</label>
+          <textarea id="f-msg" placeholder="필요하신 부품명, 수량, 희망 납기 등을 남겨주세요."></textarea>
+        </div>
+      </div>
+      <button type="submit" class="btn btn-primary">견적 문의 보내기</button>
+      <p class="form-note">제출하신 정보는 견적 상담 목적으로만 사용되며, 담당자가 확인 후 순차 연락드립니다.</p>
+      <div class="form-success" id="formSuccess">문의가 접수되었습니다. 담당자가 곧 연락드리겠습니다.</div>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <div class="container footer-inner">
+    <div class="f-brand">HD건설기계 <span>× DEVELON</span></div>
+    <div>DEVELON은 HD현대인프라코어의 등록 상표입니다. 본 페이지는 정품부품 공식 판매·홍보 목적으로 제작되었습니다.</div>
+    <div>&copy; <span id="year"></span> HD건설기계. All rights reserved.</div>
+  </div>
+</footer>
+
+<button class="back-top" id="backTop" aria-label="맨 위로">↑</button>
+
+<script>
+(function(){
+  "use strict";
+
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  /* ---- nav scroll state ---- */
+  var nav = document.getElementById('site-nav');
+  var backTop = document.getElementById('backTop');
+  function onScroll(){
+    if(window.scrollY > 40){ nav.classList.add('scrolled'); } else { nav.classList.remove('scrolled'); }
+    if(window.scrollY > 600){ backTop.classList.add('show'); } else { backTop.classList.remove('show'); }
+  }
+  window.addEventListener('scroll', onScroll, {passive:true});
+  onScroll();
+
+  backTop.addEventListener('click', function(){
+    window.scrollTo({top:0, behavior:'smooth'});
+  });
+
+  /* ---- mobile menu toggle ---- */
+  var toggle = document.getElementById('navToggle');
+  toggle.addEventListener('click', function(){
+    nav.classList.toggle('menu-open');
+  });
+  document.querySelectorAll('.nav-links a').forEach(function(a){
+    a.addEventListener('click', function(){ nav.classList.remove('menu-open'); });
+  });
+
+  /* ---- active nav link (bookmark) highlighting ---- */
+  var navLinks = Array.prototype.slice.call(document.querySelectorAll('.nav-links a[data-nav]'));
+  var sections = navLinks.map(function(a){ return document.querySelector(a.getAttribute('href')); }).filter(Boolean);
+
+  var navObserver = new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+      var id = '#' + entry.target.id;
+      var link = navLinks.filter(function(a){ return a.getAttribute('href') === id; })[0];
+      if(!link) return;
+      if(entry.isIntersecting){
+        navLinks.forEach(function(a){ a.classList.remove('active'); });
+        link.classList.add('active');
+      }
+    });
+  }, {rootMargin:'-45% 0px -45% 0px', threshold:0});
+  sections.forEach(function(s){ navObserver.observe(s); });
+
+  /* ---- generic reveal-on-scroll ---- */
+  var revealEls = document.querySelectorAll('.reveal, .process-step.reveal');
+  var revealObserver = new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+      if(entry.isIntersecting){
+        entry.target.classList.add('in-view');
+        revealObserver.unobserve(entry.target);
+      }
+    });
+  }, {threshold:0.15});
+  revealEls.forEach(function(el){ revealObserver.observe(el); });
+
+  /* ---- animated counters ---- */
+  var counters = document.querySelectorAll('[data-count]');
+  var counterObserver = new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+      if(!entry.isIntersecting) return;
+      var el = entry.target;
+      var target = parseInt(el.getAttribute('data-count'), 10);
+      var suffix = el.getAttribute('data-suffix') || '';
+      var start = 0;
+      var duration = 1400;
+      var startTime = null;
+      function step(ts){
+        if(!startTime) startTime = ts;
+        var progress = Math.min((ts - startTime) / duration, 1);
+        var eased = 1 - Math.pow(1 - progress, 3);
+        var val = Math.round(start + (target - start) * eased);
+        el.textContent = val + suffix;
+        if(progress < 1){ requestAnimationFrame(step); }
+      }
+      requestAnimationFrame(step);
+      counterObserver.unobserve(el);
+    });
+  }, {threshold:0.6});
+  counters.forEach(function(el){ counterObserver.observe(el); });
+
+  /* ---- inquiry form (front-end only demo submit) ---- */
+  var form = document.getElementById('inquiryForm');
+  var success = document.getElementById('formSuccess');
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    success.classList.add('show');
+    form.reset();
+    setTimeout(function(){ success.classList.remove('show'); }, 5000);
+  });
+
+  /* ---- reduced motion respect ---- */
+  if(window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+    document.querySelectorAll('.draw-path, .hi-line, .hero-actions, .hero-stats, .hero-copy p, .authentic-badge-inner')
+      .forEach(function(el){ el.style.animation = 'none'; el.style.opacity = 1; el.style.transform = 'none'; });
+  }
+})();
+</script>
+</body>
 </html>
